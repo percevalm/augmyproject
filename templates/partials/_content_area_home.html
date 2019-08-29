@@ -1,0 +1,187 @@
+{% load static %}
+{% load cms_tags menu_tags sekizai_tags %}
+<style>
+  /* .background_image1 {
+  background: url('/static/images/step0002.jpg'); /*code pulls through the image in css*/
+  /* background-size: cover; */
+
+
+
+
+  div.ex1 {
+    background-color: white;
+    /* width: 85%; */
+    height: 100%;
+    overflow: scroll;
+     /* margin-left: 30px; */
+    /* margin-right: 30px;  */
+    /* min-width: 500px; */
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+  }
+</style>
+
+<section id="showcase">
+  {% block content %}
+
+    <div class="container" id="centercontent">
+
+      <div class="card-columns text-center">
+        <div class="card text-white border-white">
+          <img class="card-img" src="\static\images\building_relations.jpg" alt="" class="img-fluid">
+          <div class="card-img-overlay">
+
+
+
+            <p style="font-size:1.5rem;" class="card-text">Building great collaborations</p>
+
+
+
+
+
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+              <a style="font-size:1rem;" href="/find-out-more" class="card-link btn btn-primary text-light btn-outline-primary btn-outline-primary" class="card-footer" class="d-flex align-items-end">Find out more</a>
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <div class="card text-white border-white">
+          <img class="card-img" src="\static\images\commissioned_work.jpg" alt="" class="img-fluid">
+
+
+          <div class="card-img-overlay">
+
+
+
+            <p style="font-size:1.5rem;" class="card-text">Undertaking commissioned work</p>
+
+
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+
+              <a style="font-size:1rem;" href="/work-with-us" class="card-link btn btn-danger text-light btn-outline-danger" class="card-footer">Work with us</a>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+        <div class="card text-white border-white">
+          <img class="card-img" src="\static\images\research_training.jpg" alt="" class="img-fluid img-thumbnail">
+          <div class="card-img-overlay">
+
+
+
+            <p style="font-size:1.5rem;" class="card-text">Research and training</p>
+
+
+            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+              <a style="font-size:1rem;" href="/explore-options" class="card-link btn btn-warning text-light btn-outline-warning" class="card-footer">Explore options</a>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div>
+
+
+        <div class="jumbotron py-5" id="jumbotron-white">
+
+          <div class="container">
+          
+
+            <p style="font-size:2rem;" class="text-center text-danger" class="card-text">News, Events and Opportunities</p>
+
+            <div class="card-group mb-3 text-center">
+
+              <div class="card mb-4 border-0">
+
+
+                <!--div class="card-header bg-white">
+                  <p style="font-size:2rem;" class="text-danger">News</p>
+                </div-->
+                <div class="card-body d-flex flex-column">
+
+
+                  <ul class="list-unstyled mt-3 mb-4">
+
+                    <ul>
+
+                      <!--Display News -->
+                      {% if object_list %}
+                      <ul>
+                        {% for news in object_list %}
+                        <p><b>{{ news.title }}</b></p>
+
+                        {% endfor %}
+                      </ul>
+
+                      {% else %}
+                      <p>No News</p>
+                      {% endif %}
+                      <!--display news -->
+
+                    </ul>
+
+
+
+                  </ul>
+                 <button type="button" class="mt-auto btn btn-warning btn-block text-light btn-outline-warning" style="font-size:1rem;"><a href="/view-all-articles" style="color:inherit">View articles</a></button>
+
+                </div>
+              </div>
+              <div class="card mb-4 box-shadow border-0">
+                <!--div class="card-header bg-white">
+                  <p style="font-size:2rem;" class="text-danger">Events</p>
+                </div-->
+                <div class="card-body d-flex flex-column">
+
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>sample text</li>
+
+                  </ul>
+                  <button type="button" class="mt-auto btn btn-primary btn-block text-light btn-outline-primary" style="font-size:1rem;"><a href="/calendar" style="color:inherit">View calendar</a></button>
+                </div>
+              </div>
+              <div class="card mb-4 box-shadow border-0">
+                <!--div class="card-header bg-white">
+                  <p style="font-size:2rem;" class="text-danger">Opportunities</p>
+                </div-->
+                <div class="card-body d-flex flex-column">
+
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>sample text</li>
+    <li>sample text</li>
+        <li>sample text</li>
+            <li>sample text</li>
+                <li>sample text</li>
+                    <li>sample text</li>
+                        <li>sample text</li>
+
+
+                  </ul>
+                  <button type="button" class="mt-auto btn btn-danger btn-block text-light btn-outline-danger" style="font-size:1rem;"> <a href="/view-all-opportunties" style="color:inherit"> View all opportunities </a></button>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+      {% endblock content %}
+</section>

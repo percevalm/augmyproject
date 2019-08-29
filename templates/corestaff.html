@@ -1,0 +1,68 @@
+{% extends 'base_left_logo.html' %}
+{%block title%} Core Staff {% endblock %}
+{% block content %}
+
+<!--Display core Staff -->
+<style>
+  .container1 {
+      background-color: white;
+
+  }
+
+  .container1 img {
+    vertical-align: middle;
+
+  }
+
+  .container1 .content1 {
+    position: relative;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 200px;
+
+  }
+</style>
+
+<!--Display core Staff in test environment --><section id="corestaff" class="py-8">
+
+  <div class="container" id="container-white">
+
+    <p style="color:#99241B;font-size:2rem;" class="text-center">The SACEMA Team</p>
+
+    <div class="row text-center text-light">
+      {% if staffdetails %}
+      {% for staffdetail in staffdetails %}
+
+      <div class="col-md-4 mb-4">
+
+        <img class="card-img" src="{{ staffdetail.person_id.headshot.url }}" alt="Card image" class="rounded" style="width: 200px" style="height: 261px">
+        <div class="card-img-overlay h-100 d-flex flex-column mt-4 justify-content-end">
+
+<div class ="container" id="containertext" style="width: 200px" style="height: 25px;">
+
+          <p style="font-size:0.875rem;"> {{staffdetail.person_id.firstnames}} {{staffdetail.person_id.surname}}, {{ staffdetail.qualification}}</p>
+          <p style="font-size:0.75rem; class="card-text" >{{staffdetail.research_theme}}</p>
+          <p style="font-size:0.75rem; class="card-text"><a class="text-light" href="{% url 'staffdetail' staffdetail.pk %}">more info...</a></p>
+
+        </div>
+        </div>
+
+      </div>
+      <hr>
+      {% endfor %}
+      {% else %}
+      <div class="col-md-12">
+        <p>No People Available</p>
+      </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+{% endblock %}

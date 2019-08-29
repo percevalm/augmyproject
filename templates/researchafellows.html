@@ -1,0 +1,43 @@
+{% extends 'base_left_logo.html' %}
+{%block title%}Research Associates and Fellows {% endblock %}
+{% block content %}
+
+
+<!--Research Associates and Fellows -->
+
+<section id="corestaff" class="py-8">
+
+  <div class="container" id="container-white">
+
+    <p style="color:#99241B;font-size:2rem;" class="text-center">Research associates and fellows</p>
+
+    <div class="row text-center text-light">
+      {% if staffdetails %}
+      {% for staffdetail in staffdetails %}
+
+      <div class="col-md-4 mb-4">
+
+        <img class="card-img" src="{{ staffdetail.person_id.headshot.url }}" alt="Card image" class="rounded" style="width: 200px" style="height: 261px">
+        <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+
+
+          <p> {{staffdetail.person_id.firstnames}} {{staffdetail.person_id.surname}}</p>
+           <p class="card-text">{{staffdetail.category}}</p>
+
+        </div>
+
+      </div>
+      <hr>
+      {% endfor %}
+      {% else %}
+      <div class="col-md-12">
+        <p>No fellows Available</p>
+      </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</section>
+{% endblock %}

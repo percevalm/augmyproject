@@ -1,0 +1,19 @@
+{% extends 'base_left_logo.html' %}
+
+{% block title %} Polls {% endblock %}
+
+{% block content %}
+
+<div class="container" id="container-white">
+
+  <div class="row">
+
+
+    {% block content %}
+    {% block polls_content %}
+    {% endblock %}
+    {% endblock %}
+  </div>
+</div>
+
+{% endblock %}

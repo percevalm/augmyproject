@@ -1,0 +1,50 @@
+{% extends 'base_left_logo.html' %}
+{% load static %}
+{%block title%} Publications {% endblock %}
+{% block content %}
+<!--Display core Staff -->
+<style>
+</style>
+
+<!--Display core Staff -->
+<section id="corestaff" class="py-8">
+
+  <div class="container" id="container-white">
+
+    <p style="color:#99241B;font-size:2rem;" class="text-center">Publications</p>
+
+<!--search button for publications -->
+    <!--input class="form-control" id="myInput" type="text" placeholder="Search.."-->
+    <div class="row">
+      <!--Display publications -->
+      {% if object_list %}
+      <ul>
+        {% for archiveupload in object_list %}
+        <p>{{ archiveupload.name }}
+          <a style="color:#99241B;" href="{{ archiveupload.url }}" target="_blank"> <i>{{ archiveupload.title }}</a></i>
+          <b>({{ archiveupload.publication_date | date:"Y"}})</b>
+          {{ archiveupload.general_doi }}</p>
+        {% endfor %}
+      </ul>
+
+      {% else %}
+      <p>There are no Publications</p>
+      {% endif %}
+
+      <!--display publications -->
+
+    </div>
+
+
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+{% endblock %}

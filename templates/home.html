@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<style>
+
+    .container{
+         max-width: 1000px;
+       }
+</style>
+
+<section id="aim" class="p-8">
+  <div class="container" id="container-white">
+    <div class="dark-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container pt-8">
+            <p class="text-center">Modelling and analysis to improve health in Africa</p>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section id="back_ground">
+  <div class="container">
+
+    <div class="card-columns text-center">
+      <div class="card text-white border-white">
+        <img class="card-img" src="\static\images\building_relations.jpg" alt="" class="img-fluid">
+        <div class="card-img-overlay">
+
+
+
+          <p style="font-size:1.5rem;" class="card-text">Building great collaborations</p>
+
+
+
+
+
+          <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+            <a style="font-size:1rem;" href="#" class="card-link btn btn-primary text-light btn-outline-primary btn-outline-primary" class="card-footer" class="d-flex align-items-end">Find out more</a>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <div class="card text-white border-white">
+        <img class="card-img" src="\static\images\commissioned_work.jpg" alt="" class="img-fluid">
+
+
+        <div class="card-img-overlay">
+
+
+
+          <p style="font-size:1.5rem;" class="card-text">Undertaking commissioned work</p>
+
+
+          <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+
+            <a style="font-size:1rem;" href="#" class="card-link btn btn-danger text-light btn-outline-danger" class="card-footer">Work with us</a>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+      <div class="card text-white border-white">
+        <img class="card-img" src="\static\images\research_training.jpg" alt="" class="img-fluid img-thumbnail">
+        <div class="card-img-overlay">
+
+
+
+          <p style="font-size:1.5rem;" class="card-text">Research and training</p>
+
+
+          <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+            <a style="font-size:1rem;" href="#" class="card-link btn btn-warning text-light btn-outline-warning" class="card-footer">Explore options</a>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div>
+
+      <div class="jumbotron py-5" id="jumbotron-white">
+
+
+
+
+
+
+        <div class="container">
+
+          <p style="font-size:2rem;" class="text-center text-danger" class="card-text">News, Events and Opportunities</p>
+
+          <div class="card-group mb-3 text-center">
+
+            <div class="card mb-4 border-0">
+
+
+              <!--div class="card-header bg-white">
+                <p style="font-size:2rem;" class="text-danger">News</p>
+              </div-->
+              <div class="card-body d-flex flex-column">
+
+
+                <ul class="list-unstyled mt-3 mb-4">
+
+                  <ul>
+
+                    <!--Display News -->
+                    {% if object_list %}
+                    <ul>
+                      {% for news in object_list %}
+                      <p><b>{{ news.title }}</b></p>
+
+                      {% endfor %}
+                    </ul>
+
+                    {% else %}
+                    <p>No News</p>
+                    {% endif %}
+                    <!--display news -->
+
+
+
+
+                  </ul>
+
+
+
+                </ul>
+                <button type="button" class="mt-auto btn btn-warning btn-block text-light btn-outline-warning" style="font-size:1rem;">View all articles</button>
+              </div>
+            </div>
+            <div class="card mb-4 box-shadow border-0">
+              <!--div class="card-header bg-white">
+                <p style="font-size:2rem;" class="text-danger">Events</p>
+              </div-->
+              <div class="card-body d-flex flex-column">
+
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>sample text</li>
+
+                </ul>
+                <button type="button" class="mt-auto btn btn-primary btn-block text-light btn-outline-primary" style="font-size:1rem;">View calender</button>
+              </div>
+            </div>
+            <div class="card mb-4 box-shadow border-0">
+              <!--div class="card-header bg-white">
+                <p style="font-size:2rem;" class="text-danger">Opportunities</p>
+              </div-->
+              <div class="card-body d-flex flex-column">
+
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>sample text</li>
+
+                </ul>
+                <button type="button" class="mt-auto btn btn-danger btn-block text-light btn-outline-danger" style="font-size:1rem;">View all opportunities</button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+  </div>
+</section>
+
+{% endblock %}

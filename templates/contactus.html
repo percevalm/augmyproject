@@ -1,0 +1,104 @@
+{% extends 'base_left_logo.html' %}
+
+{% block title %} Contact us {% endblock %}
+
+{% block content %}
+
+<style>
+  #container-white{
+
+  }
+</style>
+
+<!--General Enquiries-->
+<section class="py-8">
+  <div class="container" id ="container-white">
+<div class="card text-center border-white">
+
+  <div class="card-body">
+      <h5 class="card-title">Contact</h5>
+
+    <h5 class="card-title">General Enquiries</h5>
+    <div class="row text-center">
+      {% if generalenquiries %}
+      {% for generalenquiry in generalenquiries %}
+      <div class="col-md-12">
+        <p> <i class="fas fa-phone"></i> {{ generalenquiry.contact_person}} | <i class="fas fa-envelope-open"></i> {{ generalenquiry.contact_email }}</p>
+
+        <p> <i class="fas fa-phone">Phone:</i> {{ generalenquiry.contact_telephone }}  | <i class="fas fa-phone"> Fax:</i>  {{ generalenquiry.contact_fax }}</p>
+        <p></p>
+
+      </div>
+      {% endfor %}
+      {% else %}
+      <div class="col-md-12">
+        <p>No Contact Details Available</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+<!--Physical Address-->
+<div class="card text-center border-white">
+  <div class="card-body">
+    <h5 class="card-title">Physical Address</h5>
+    <div class="row text-center">
+      {% if physicaladdress %}
+      {% for physicaladds in physicaladdress %}
+      <div class="col-md-12">
+        <p> <i class="fas fa-phone"></i> {{ physicaladds.physical_address}} </p>
+      </div>
+      {% endfor %}
+      {% else %}
+      <div class="col-md-12">
+        <p>No Physical address Available</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+<!--Postal Address-->
+<div class="card text-center border-white">
+  <div class="card-body">
+    <h5 class="card-title">Postal Address</h5>
+    <div class="row text-center">
+      {% if postaladdress %}
+      {% for postaladd in postaladdress %}
+      <div class="col-md-12">
+        <p> <i class="fas fa-phone"></i> {{ postaladd.postal_address}} </p>
+      </div>
+      {% endfor %}
+      {% else %}
+      <div class="col-md-12">
+        <p>No Physical address Available</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+<!--Map-->
+<div class="card text-center border-white">
+  <div class="card-body">
+    <h5 class="card-title">Map</h5>
+    <div class="row text-center">
+      {% if place %}
+      {% for plac in place %}
+      <div class="col-md-12">
+        <p> <i class="fas fa-phone"></i> {{ plac.place}} </p>
+      </div>
+      {% endfor %}
+      {% else %}
+      <div class="col-md-12">
+        <p>No Maps Available</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+{% endblock %}

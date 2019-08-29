@@ -1,0 +1,154 @@
+{% extends 'base_left_logo.html' %}
+{%block title%} Students {% endblock %}
+{% block content %}
+
+
+<!--Display PhD Students -->
+<section id="phdstudents" class="py-8">
+
+  <div class="container" id="container-white">
+
+    <p style="color:#99241B;font-size:2rem;" class="text-center">PhD Students</p>
+
+    <div class="row text-center text-light">
+      {% if phdstudentdetails %}
+      {% for phdstudentdetail in phdstudentdetails %}
+
+      <div class="col-md-4 mb-4">
+
+        <img class="card-img" src="{{ phdstudentdetail.person_id.headshot.url }}" alt="Card image" class="rounded" style="width: 200px" style="height: 261px">
+        <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+
+
+          <p> {{phdstudentdetail.person_id.firstnames}} {{phdstudentdetail.person_id.surname}}</p>
+        <p class="card-text">Supervisor: {{phdstudentdetail.supervisor}}</p>
+           <p class="card-text">{{phdstudentdetail.supervisor_additional}}</p>
+
+        </div>
+
+      </div>
+      <hr>
+      {% endfor %}
+      {% else %}
+      <div class="col-md-12">
+        <p>No PhD Students Available</p>
+      </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</section>
+<!--Display Msc Students -->
+<section id="mscstudents" class="py-8">
+
+  <div class="container" id="container-white">
+
+    <p style="color:#99241B;font-size:2rem;" class="text-center">MSc Students</p>
+
+    <div class="row text-center text-light">
+      {% if mscstudentdetails %}
+      {% for mscstudentdetail in mscstudentdetails %}
+
+      <div class="col-md-4 mb-4">
+
+        <img class="card-img" src="{{ mscstudentdetail.person_id.headshot.url }}" alt="Card image" class="rounded" style="width: 200px" style="height: 261px">
+        <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+
+
+          <p> {{mscstudentdetail.person_id.firstnames}} {{mscstudentdetail.person_id.surname}}</p>
+          <p class="card-text">Supervisors: {{mscstudentdetail.supervisor}}</p>
+           <p class="card-text">{{mscstudentdetail.supervisor_additional}}</p>
+
+        </div>
+
+      </div>
+      <hr>
+      {% endfor %}
+      {% else %}
+      <div class="col-md-12">
+        <p>No Msc Students Available</p>
+      </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</section>
+<!--Display Honors Students -->
+<section id="honorsstudents" class="py-8">
+
+  <div class="container" id="container-white">
+
+    <p style="color:#99241B;font-size:2rem;" class="text-center">Honours Students</p>
+
+    <div class="row text-center text-light">
+      {% if honsstudentdetails %}
+      {% for honsstudentdetail in honsstudentdetails %}
+
+      <div class="col-md-4 mb-4">
+
+        <img class="card-img" src="{{ honsstudentdetail.person_id.headshot.url }}" alt="Card image" class="rounded" style="width: 200px" style="height: 261px">
+        <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+
+
+          <p> {{honsstudentdetail.person_id.firstnames}} {{honsstudentdetail.person_id.surname}}</p>
+          <p class="card-text">Supervisors: {{honsstudentdetail.supervisor}}</p>
+           <p class="card-text">{{honsstudentdetail.supervisor_additional}}</p>
+
+        </div>
+
+      </div>
+      <hr>
+      {% endfor %}
+      {% else %}
+      <div class="col-md-12">
+        <p>No Honours Students Available</p>
+      </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</section>
+<!--Display ERF Students -->
+<section id="erfstudents" class="py-8">
+
+  <div class="container" id="container-white">
+
+    <p style="color:#99241B;font-size:2rem;" class="text-center">ERF Students</p>
+
+    <div class="row text-center text-light">
+      {% if erfstudentdetails %}
+      {% for erfstudentdetail in erfstudentdetails %}
+
+      <div class="col-md-4 mb-4">
+
+        <img class="card-img" src="{{ erfstudentdetail.person_id.headshot.url }}" alt="Card image" class="rounded" style="width: 200px" style="height: 261px">
+        <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+
+
+          <p> {{erfstudentdetail.person_id.firstnames}} {{erfstudentdetail.person_id.surname}}</p>
+          <p class="card-text">Supervisors: {{erfstudentdetail.supervisor}}</p>
+           <p class="card-text">{{erfstudentdetail.supervisor_additional}}</p>
+
+        </div>
+
+      </div>
+      <hr>
+      {% endfor %}
+      {% else %}
+      <div class="col-md-12">
+        <p>No ERF Students Available</p>
+      </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</section>
+{% endblock content %}

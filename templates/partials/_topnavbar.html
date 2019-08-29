@@ -1,0 +1,49 @@
+{% load static %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+<style>
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+    width: 200px;   /* temporary adjustment of navbar width*/
+
+  }
+
+
+  .navbar {
+ min-height: 65px; /* nav bar thickness*/
+}
+
+  li a:hover {
+    background-color: #F7941E; /* change of colors when hovering navbar */
+    color: #731305;
+     word-wrap: break-word;
+  }
+
+    li a {
+      color: white; /* default color of menu to be white */
+    }
+
+
+  li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 35px; /* spacing and style of nav menus */
+    padding-left: 35px;
+    font: white;
+  }
+</style>
+
+<section id="top-bar" class="p-0">
+  <div class="container"  id="centercontent" class="top-bar">
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-default navbar-custom">
+        <div class="container" class="top-bar">
+
+        <a class="navbar-brand" href="#"></a>
+        <ul class="navbar-nav m-auto">
+          {%  show_menu 0 1 100 100 "menu/custom-menu.html" %}
+        </ul>
+      </div>
+    </nav>
+    </div>
+</section>

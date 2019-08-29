@@ -1,0 +1,425 @@
+{% load staticfiles %}
+ <!doctype html>
+ <html lang="en">
+
+ <head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+   <!-- Bootstrap core  -->
+   <link rel="stylesheet" href="{% static 'bootstrap4/css/bootstrap.min.css' %}">
+   <!-- Custom css -->
+   <link rel="stylesheet" href="{% static 'bootstrap4/css/style.css' %}">
+
+
+
+
+
+   <!-- Required Jquery -->
+
+   <!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script-->
+
+   <!--script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="js/jquery.validate.js"></script-->
+
+
+   <!-- Bootstrap CSS -->
+   <!link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous" -->
+
+
+     <title>{% block title %}Hello, world!{% endblock %}</title>
+     <!-- Configuring CSS in django website -->
+
+
+
+     <!--link rel="stylesheet" type="text/css" href="style.css"-->
+
+
+
+
+
+
+
+     <nav class="navbar navbar-expand-sm navbar-dark bg-default navbar-custom">
+
+       <div class="container ">
+         <a class="navbar-brand" href="#"></a>
+
+         <ul class="navbar-nav m-auto">
+           <li class="nav-item">
+             <a class="nav-link" href="#">About</a>
+           </li>
+           <li class="nav-item dropdown">
+             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Research Themes </a>
+             <div class="dropdown-menu">
+               <a href="#" class="dropdown-item">Research Theme 1</a>
+               <div class="dropdown-divider"></div>
+               <a href="#" class="dropdown-item">Research Theme 2</a>
+               <div class="dropdown-divider"></div>
+               <a href="#" class="dropdown-item">Research Theme 3 </a>
+               <div class="dropdown-divider"></div>
+               <a href="#" class="dropdown-item">Research Theme 4</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#">Publications</a>
+           </li>
+           <li class="nav-item dropdown">
+             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">People </a>
+             <div class="dropdown-menu">
+               <a href="#" class="dropdown-item">Core Staff</a>
+               <div class="dropdown-divider"></div>
+               <a href="#" class="dropdown-item">Postgraduate Bursaries</a>
+               <div class="dropdown-divider"></div>
+               <a href="#" class="dropdown-item">Emerging Researcher Funding</a>
+               <div class="dropdown-divider"></div>
+               <a href="#" class="dropdown-item">Job Openings</a>
+           </li>
+
+           <li class="nav-item dropdown">
+             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Opportunities </a>
+             <div class="dropdown-menu">
+               <a href="#" class="dropdown-item">Short Courses</a>
+               <div class="dropdown-divider"></div>
+               <a href="#" class="dropdown-item">Postgraduate Bursaries</a>
+               <div class="dropdown-divider"></div>
+               <a href="#" class="dropdown-item">Emerging Researcher Funding</a>
+               <div class="dropdown-divider"></div>
+               <a href="#" class="dropdown-item">Job Openings</a>
+           </li>
+           <li class="nav-item dropdown">
+             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">News</a>
+             <div class="dropdown-menu">
+               <a href="#" class="dropdown-item">Events and Announcements</a>
+               <div class="dropdown-divider"></div>
+               <a href="#" class="dropdown-item">Newsletters</a>
+           </li>
+
+           <li class="nav-item">
+             <a class="nav-link" href="#">Resources</a>
+           </li>
+       </div>
+       </li>
+
+       </ul>
+       </div>
+     </nav>
+
+ </head>
+
+ <body>
+
+   <!-- logo section -->
+
+   <!-- logo section -->
+   <section id="logosection" class="py-8">
+     <div class="dark-overlay">
+       <div class="row">
+         <div class="col">
+           <div class="container pt-8">
+             <img src="/static/images/sacemasmallestlogo.jpg" class="mx-auto d-block">
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+   <!-- moto section -->
+
+   </div>
+   <section id="aim" class="p-8">
+     <div class="dark-overlay">
+       <div class="row">
+         <div class="col">
+           <div class="container pt-8">
+             <p class="text-center">SACEMA works towards improving health in Africa through modelling and analysis</p>
+
+
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+
+   <div class="row" id="bg">
+
+<p>    </p>
+   </div>
+
+
+
+
+   <!-- black nav link section -->
+    <div class="container">
+   {% block content %} {% endblock%}
+</div>
+   <section id="logosection">
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+       <ul class="navbar-nav">
+
+         <!-- Subscribe -->
+         <li class="nav-item active">
+
+           <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".bd-subscribe-modal-lg">Subscribe</button>
+
+           <div class="modal fade bd-subscribe-modal-lg" tabindex="-1" role="dialog" aria-labelledby="subscribeModalCenterTitle" aria-hidden="true">
+             <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="subscribeModalCenterTitle">Subscribe</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                   </button>
+                 </div>
+                 <div class="modal-body">
+                   <div class="col-md-12">
+                     <div class="card p-4">
+                       <div class="card-body">
+                         <h3 class="text-center">Please subscribe by filling up this form</h3>
+                         <hr>
+                         <div class="row">
+                           <div class="col-md-6">
+                             <div class="form-group">
+                               <input type="text" class="form-control" placeholder="First Name">
+                             </div>
+                           </div>
+                           <div class="col-md-6">
+                             <div class="form-group">
+                               <input type="text" class="form-control" placeholder="Last Name">
+                             </div>
+                           </div>
+                           <div class="col-md-6">
+                             <div class="form-group">
+                               <input type="text" class="form-control" placeholder="Email">
+                             </div>
+                           </div>
+                           <div class="col-md-6">
+                             <div class="form-group">
+                               <input type="text" class="form-control" placeholder="Phone Number">
+                             </div>
+                           </div>
+                         </div>
+                         <div class="row">
+                           <div class="col-md-12">
+                             <div class="form-group">
+                               <textarea class="form-control" placeholder="Message"></textarea>
+                             </div>
+                           </div>
+                           <div class="col-md-12">
+                             <div class="form-group">
+                               <input type="submit" value="Submit" class="btn btn-outline-danger btn-block">
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+
+
+               </div>
+             </div>
+           </div>
+         </li>
+         <!-- email -->
+         <li class="nav-item active">
+           <a href="mailto:sacema@sun.ac.za?Subject=Hello%20again" class="btn btn-dark" role="button" aria-pressed="true">email</a>
+         </li>
+         <!-- twitter modal -->
+         <li class="nav-item active">
+
+           <a href="https://twitter.com/hashtag/sacema" class="btn btn-dark" role="button" aria-pressed="true">twitter</a>
+         </li>
+         <!-- facebook -->
+         <li class="nav-item active">
+           <a href="https://www.facebook.com/South-African-Centre-for-Epidemiological-Modelling-and-Analysis-SACEMA-323117351091390/" class="btn btn-dark" role="button" aria-pressed="true">facebook</a>
+
+         </li>
+         <!-- Contact us modal -->
+         <li class="nav-item active">
+
+           <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".bd-contactus-modal-xl">contact us</button>
+
+           <div class="modal fade bd-contactus-modal-xl" tabindex="-1" role="dialog" aria-labelledby="contactusLargeModalLabel" aria-hidden="true">
+             <div class="modal-dialog modal-xl">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="contactusModalCenterTitle">Get in Touch</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                   </button>
+                 </div>
+                 <div class="modal-body">
+                   <section id="contact" class="py-3">
+                     <div class="container">
+
+                       <div class="row">
+
+                         <div class="col-md-5">
+
+
+                           <div class="card p-4">
+                             <div class="card-body">
+
+                               <h4>Address</h4>
+                               <p>SACEMA</p>
+                               <p>19 Jonkershoek Road</p>
+                               <p>Stellenbosch, 7600</p>
+                               <h4>Contact Person</h4>
+                               <p>Faikah Bruce</p>
+                               <h4>Email</h4>
+                               <p>sacema@sun.ac.za</p>
+                               <h4>Phone</h4>
+                               <p>(021) 808-2589</p>
+                               <h4>Fax</h4>
+                               <p>(021) 808-2586</p>
+                             </div>
+                           </div>
+                         </div>
+                         <div class="col-md-7">
+                           <div class="card p-4">
+                             <div class="card-body">
+                               <h3 class="text-center">Please fill out this form to contact us</h3>
+                               <hr>
+                               <div class="row">
+                                 <div class="col-md-9">
+                                   <div class="form-group">
+                                     <input type="text" class="form-control" placeholder="First Name">
+                                   </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                   <div class="form-group">
+                                     <input type="text" class="form-control" placeholder="Last Name">
+                                   </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                   <div class="form-group">
+                                     <input type="text" class="form-control" placeholder="Email">
+                                   </div>
+                                 </div>
+                                 <div class="col-md-9">
+                                   <div class="form-group">
+                                     <input type="text" class="form-control" placeholder="Phone Number">
+                                   </div>
+                                 </div>
+                               </div>
+                               <div class="row">
+                                 <div class="col-md-12">
+                                   <div class="form-group">
+                                     <textarea class="form-control" placeholder="Message"></textarea>
+                                   </div>
+                                 </div>
+                                 <div class="col-md-12">
+                                   <div class="form-group">
+                                     <input type="submit" value="Submit" class="btn btn-outline-danger btn-block">
+                                   </div>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   </section>
+                 </div>
+
+
+               </div>
+             </div>
+           </div>
+         </li>
+
+         <!-- legal modal -->
+         <li class="nav-item active">
+
+           <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">legal</button>
+
+           <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+             <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalCenterTitle">Legal</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                   </button>
+                 </div>
+                 <div class="modal-body">
+                   <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College
+                     in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from
+                     sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of
+                     Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. </p>
+                 </div>
+
+                 ...
+               </div>
+             </div>
+           </div>
+         </li>
+
+
+
+       </ul>
+     </nav>
+   </section>
+
+
+   <!-- Funder PHOTO GALLERY -->
+
+
+
+
+   <section id="logosection2" class="py-1">
+     <div class="container">
+
+       <p class="text-center">DST-NRF Centre of Excellence in Epidemiological Modelling and Analysis</p>
+       <div class="row mb-4">
+         <div class="col-md-4">
+
+
+           <img src="/static/images/StellenboschUniversity.jpg" alt="" class="img-fluid">
+           </a>
+         </div>
+
+         <div class="col-md-4">
+
+
+           <img src="/static/images/NationalResearchFoundation.jpg" alt="" class="img-fluid">
+           </a>
+         </div>
+
+         <div class="col-md-4">
+
+
+           <img src="/static/images/DepartmentOfScienceAndTechnology.jpg" alt="" class="img-fluid">
+           </a>
+         </div>
+       </div>
+
+
+     </div>
+   </section>
+
+   <footer id="main-footer" class="text-center p+5">
+     <div class="container">
+       <div class="row">
+         <div class="col">
+           <p>Copyright © SACEMA {% now "Y" %}</p>
+         </div>
+       </div>
+     </div>
+   </footer>
+
+
+
+
+   <!-- Bootstrap core JavaScript
+      ================================================== -->
+   <!-- Placed at the end of the document so the pages load faster -->
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+ </body>
+
+ </html>

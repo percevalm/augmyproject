@@ -1,0 +1,92 @@
+{% load static %}
+<style>
+
+  </style>
+<section id="lower_navbar" class="py-1">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+    <ul class="navbar-nav">
+
+      <!-- Subscribe -->
+      <li class="nav-item active">
+
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".bd-subscribe-modal-lg">Subscribe</button>
+
+        <div class="modal fade bd-subscribe-modal-lg" tabindex="-1" role="dialog" aria-labelledby="subscribeModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="subscribeModalCenterTitle">Subscribe</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="col-md-12">
+                  <div class="card p-4">
+                    <div class="card-body">
+                      <h3 class="text-center">Please subscribe by filling up this form</h3>
+                      <hr>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder="First Name">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last Name">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Email">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Phone Number">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <textarea class="form-control" placeholder="Message"></textarea>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <input type="submit" value="Submit" class="btn btn-outline-danger btn-block">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </li>
+      <!-- email -->
+      <li class="nav-item active">
+        <a href="mailto:sacema@sun.ac.za?Subject=Hello%20again" class="btn btn-dark" role="button" aria-pressed="true">Email</a>
+      </li>
+      <!-- twitter page -->
+      <li class="nav-item active">
+
+        <a href="https://twitter.com/hashtag/sacema" class="btn btn-dark" role="button" aria-pressed="true">Twitter</a>
+      </li>
+      <!-- facebook -->
+      <!-- Contact us modal -->
+      <li class="nav-item active">
+
+        <a href="/contact" class="btn btn-dark" role="button" aria-pressed="true">Contact us</a>
+      </li>
+      <!-- legal modal -->
+
+    </ul>
+  </nav>
+</section>

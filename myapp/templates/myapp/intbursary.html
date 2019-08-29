@@ -1,0 +1,271 @@
+
+{% extends 'base.html' %}
+{% block title %} Internal Bursary {% endblock %}
+{% block content %}
+<h4 style= 'color:red'>Welcome to the Internal Bursary Applications for 2020 construction in progress, please be patient !!!!</h4>
+
+<!--code to display successfuly submitted application using django messages library-->
+{% if messages %}
+        {% for message in messages %}
+          <div class="alert col-12 alert-danger alert-dismissible" role="alert">
+           <button class="close" data-dismiss= "alert">
+            <small><sup>x</sup></small>
+         </button>
+         {{message}}
+          </div>
+    {% endfor %}
+{% endif %}
+<!-- Form start-->
+<!-- enctype class is for file uploads -->
+
+<form class="form-control my-2 my-lg-0" enctype="multipart/form-data" action="{% url 'intbursary' %}" method ="POST">
+{% csrf_token %}
+{{ form.as_p }}
+	 <!-- this is for security to prevent hacking -->
+
+	<div  class="form-group">
+		    <label for="surname">Enter Surname</label>
+	<input class="form-control mr-sm-2 col-5" type ="text"aria-label="Search" name ="surname" required>
+
+	</div>
+
+	<div class="form-group">
+	<label for="first_name">Enter First Name</label>
+	<input class="form-control mr-sm-2 col-5" type ="text" aria-label="Search" name ="first_name" required>
+	</div>
+
+	<div class="form-group">
+	<label for="id_number">ID or Passport No.</label>
+	<input class="form-control mr-sm-2 col-5" type ="text" aria-label="Search" name ="id_number" required>
+	</div>
+
+	<div class="form-group">
+	<label for="nationality">Nationality</label>
+	<input class="form-control mr-sm-2 col-5" type ="text" aria-label="Search" name ="nationality" required>
+	</div>
+
+
+
+	<div class="form-group">
+    <label for="race">Race</label>
+    <select name ="race" class="form-control col-5" id="race" required>
+      <option value="">Select Race</option>
+      <option value="White">White</option>
+      <option value="Black">Black</option>
+      <option value="Indian">Indian</option>
+      <option value="Colored">Colored</option>
+      <option value="Other">Other</option>
+    </select>
+
+	</div>
+
+  <!--TEST CASE-->
+
+	<div class="form-group">
+      <label for="gender">Gender</label>
+    <select name ="gender" class="form-control col-5" required>
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+
+	</div>
+
+	<div class="form-group">
+	<label for="telephone_number">Contact Tel No.</label>
+	<input class="form-control mr-sm-2 col-5" type ="text" aria-label="Search" name ="telephone_number" required>
+	</div>
+
+	<div class="form-group">
+	<label for="email">Email Address</label>
+	<input class="form-control mr-sm-2 col-5" type ="email" aria-label="Search" name ="email" required>
+	</div>
+
+	<div class="form-group">
+      <label for="employed">Employed</label>
+    <select name ="employed" class="form-control col-5" required>
+      <option value="">Select</option>
+      <option value="FullTime">Full-Time</option>
+      <option value="PartTime">Part-Time</option>
+      <option value="No">No</option>
+    </select>
+	</div>
+
+	<div class="form-group">
+	<label for="employed_at">Institution / Company Employed</label>
+	<input class="form-control mr-sm-2 col-5" type ="text" aria-label="Search" name ="employed_at" required>
+	</div>
+
+	<div class="form-group">
+  <label for="full_part_time">Applying for a Full-Time or Part-Time Degree ?</label>
+    <select name ="full_part_time" class="form-control col-5" required>
+      <option value="">Select</option>
+      <option value="FullTime">Full-Time</option>
+      <option value="PartTime">Part-Time</option>
+    </select>
+	</div>
+
+
+	<div class="form-group">
+      <label for="employed_study">Do you intend to be employed during your degree studies?</label>
+    <select name ="employed_study" class="form-control col-5" required>
+       <option value="">Select</option>
+      <option value="No">No</option>
+      <option value="Yes">Yes</option>
+    </select>
+	</div>
+
+<div class="form-group">
+	<label for="employed_study_details">If Yes, Give Details...</label>
+
+    <textarea class="form-control col-5" name="employed_study_details" rows="3" required></textarea>
+  </div>
+
+	<div class="form-group">
+      <label for="proposed_degree">Degree for which you are applying ?</label>
+    <select name ="proposed_degree" class="form-control col-5" required>
+      <option value="">Select Degree</option>
+      <option value="Msc">Msc</option>
+      <option value="PhD">PhD</option>
+    </select>
+	</div>
+
+	<div class="form-group">
+<label for="other_funding">If other funding has been applied for, Give Details... </label>
+    <textarea class="form-control col-5" name="other_funding" rows="3" required></textarea>
+  </div>
+
+	<div class="form-group">
+	<label for="referee_details">NAME AND CONTACT DETAILS OF ACADEMIC REFEREE </br>
+		(from whom you have requested a support letter to be</br>sent directly to SACEMA...)</label>
+    <textarea class="form-control col-5" name="referee_details" rows="5" required ></textarea>
+  </div>
+
+  <!-Qualifications -->
+<!--
+	<div  class="form-group">
+	<label for="degree_1">Degree/Diploma</label>
+	<input class="form-control mr-sm-2 col-4" type ="search" aria-label="Search" name ="degree_1">
+	</div>
+
+	<div  class="form-group">
+	<label for="f_o_study_1">Field of Study</label>
+	<input class="form-control mr-sm-2 col-4" type ="search" aria-label="Search" name ="f_o_study_1">
+	</div>
+
+	<div  class="form-group">
+	<label for="major_sub_1">Major Subjects</label>
+	<input class="form-control mr-sm-2 col-4" type ="search" aria-label="Search" name ="major_sub_1">
+	</div>
+
+	<div  class="form-group">
+	<label for="institution_1">Institution</label>
+	<input class="form-control mr-sm-2 col-4" type ="search" aria-label="Search" name ="institution_1">
+	</div>
+
+	<div class="form-group">
+  	<label for="year_obtained_1">Year Obtained</label>
+    <input class="form-control mr-sm2 col-4" type="date" name ="year_obtained_1">
+ 	 </div>
+
+-->
+	<!- Qualifications test 2-->
+
+<div class="container-fluid" style ="border-style:ridge; border-width:0.5px">
+
+    <div>
+	 <div class="row">
+    <div class="col">
+      <label for="degree_1"> Degree/ Diploma</label>
+      <input type="text" class="form-control" name="degree_1">
+      <input type="text" class="form-control" name="degree_2">
+        <input type="text" class="form-control" name="degree_3">
+          <input type="text" class="form-control" name="degree_4">
+  
+    </div>
+    <div class="col">
+      <label for="f_o_study_1">Field of Study</label>
+      <input type="text" class="form-control" name="f_o_study_1">
+      <input type="text" class="form-control" name="f_o_study_2">
+      <input type="text" class="form-control" name="f_o_study_3">
+      <input type="text" class="form-control" name="f_o_study_4">
+  
+  
+  
+      </div>
+
+    <div class="col">
+      <label for="major_sub_1">Major Subjects</label>
+      <input type="text" class="form-control" name="major_sub_1">
+      <input type="text" class="form-control" name="major_sub_2">
+      <input type="text" class="form-control" name="major_sub_3">
+      <input type="text" class="form-control" name="major_sub_4">
+  
+      </div>
+
+      <div class="col">
+      <label for="institution_1">Institution</label>
+      <input type="text" class="form-control" name="institution_1">
+      <input type="text" class="form-control" name="institution_2">
+      <input type="text" class="form-control" name="institution_3">
+      <input type="text" class="form-control" name="institution_4">
+      </div>
+    <div class="col">
+      <label for="year_obtained_1">Year Obtained</label>
+        <input type="text" class="form-control" name="year_obtained_1">
+          <input type="text" class="form-control" name="year_obtained_2">
+          <input type="text" class="form-control" name="year_obtained_3">
+          <input type="text" class="form-control" name="year_obtained_4">
+  
+      </div>
+    </div>
+    </div>
+  </div>
+				
+  <div class="form-group">
+    <label for="personal_statement">Upload Your Personal Statement in .pdf format</label>
+    <input type="file" class="form-control-file" name="personal_statement" required>
+    
+  </div>
+
+  <div class="form-group">
+    <label for="cv">Upload Your CV in.pdf format</label>
+    <input type="file" class="form-control-file" name="cv" required>
+  </div>
+
+
+  <div class="form-group">
+    <label for="transcript">Upload Your Transcript in .pdf format</label>
+    <input type="file" class="form-control-file" name="transcript" required >
+  </div>
+
+
+  <div class="form-group">
+    <label for="ref_letter">Upload Your Reference Letter in .pdf format</label>
+    <input type="file" class="form-control-file" name="ref_letter" required>
+  </div>
+
+
+  <div class="form-group">
+    <label for="id_copy">Upload Your ID/Passport copy in .pdf format</label>
+    <input type="file" class="form-control-file" name="id_copy" required>
+  </div>
+
+  <div class="form-group">
+    <label for="article">Upload Your Article in .pdf format</label>
+    <input type="file" class="form-control-file" name="article" required>
+  </div>
+
+  	<div>
+	<button class="btn btn-outline-danger my-2 my-sm-0" value ="add personal st"type="submit">Submit Application</button>
+	 
+	</div>
+</form>
+<!-- Form End-->
+
+<!--Jquery code for  Form Validation, showing unpopulated fields/-->
+<script>
+  $("#commentForm").validate();
+</script>
+
+{% endblock %}

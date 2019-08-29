@@ -1,0 +1,82 @@
+{% extends 'base_left_logo.html' %}
+
+{% block title %} Person {% endblock %}
+
+{% block content %}
+
+<div class="container" id="container-white">
+
+  <div class="row">
+
+    <div class="col-sm-3"> <img class="card-img" src="{{ staffdetail.person_id.headshot.url }}" alt="Card image" class="rounded" style="width: 200px" style="height: 261px"></div>
+
+    <div class="col-sm-9">
+      <p style="color:#99241B;font-size:2rem;">
+        {{staffdetail.person_id.firstnames}} {{staffdetail.person_id.surname}}, {{staffdetail.qualification}}
+      </p>
+
+
+      <p style="color:#99241B;font-size:1.5rem;">{{staffdetail.job_title}}
+      </p>
+
+      <p>{{staffdetail.research_theme}}
+      </p>
+      <p style="text-align: justify">{{staffdetail.person_id.bio}}</p>
+
+      <p style="color:#99241B;font-size:1.5rem;">
+        Publications
+
+      </p>
+
+
+      <!---display publications per person----->
+
+      {% if object_list %}
+      <ul>
+        {% for archiveupload in object_list %}
+        <p>{{ archiveupload.name }}
+          <a style="color:#99241B;" href="{{ archiveupload.url }}" target="_blank"> <i>{{ archiveupload.title }}</a></i>
+          <b>({{ archiveupload.publication_date | date:"Y"}})</b>
+          {{ archiveupload.general_doi }}</p>
+        {% endfor %}
+      </ul>
+
+      {% else %}
+      <p>There are no Publications</p>
+      {% endif %}
+
+      <!--display publications -->
+      <!---display publications per person----
+
+      {% if object_list %}
+      <ul>
+        {% for archiveupload in object_list %}
+        <p>{{ archiveupload.name }}
+          <a style="color:#99241B;" href="{{ archiveupload.url }}"> <i>{{ archiveupload.title }}</a></i>
+          <b>({{ archiveupload.publication_date | date:"Y"}})</b>
+          {{ archiveupload.general_doi }}</p>
+        {% endfor %}
+      </ul>
+
+      {% else %}
+      <p>There are no Publications</p>
+      {% endif %}
+
+      <!---display publications per person----->
+
+
+      <p>
+        <a href="#" class="card-link btn btn-warning btn text-light" class="card-footer">Full publication list</a> </p>
+      <p> {{staffdetail.person_id.website}}
+
+      </p>
+      <p> {{staffdetail.person_id.email}}
+      </p>
+
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
